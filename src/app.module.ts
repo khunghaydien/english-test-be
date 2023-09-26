@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { UserModule } from './user/user.module';
+import { ExamModule } from './exam/exam.module';
 @Module({
   imports: [TypeOrmModule.forRoot({
     type: 'postgres',
@@ -14,7 +15,7 @@ import { UserModule } from './user/user.module';
     database: 'english',
     entities: ["dist/**/*.entity{.ts,.js}"],
     synchronize: true,
-  }), UserModule,],
+  }), UserModule, ExamModule,],
   controllers: [AppController],
   providers: [AppService],
 })
